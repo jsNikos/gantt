@@ -1,0 +1,54 @@
+@import "defs.less";
+
+.absolute-stretch(){
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+.absolute-horiz-stretch(){
+	position: absolute;	
+	left: 0px;
+	right: 0px;
+}
+
+.absolute-center(){
+	.absolute-stretch();
+	margin: auto; 
+}
+
+.linear-gradient-top-bottom(@topColor, @bottomColor){
+	background-image:  linear-gradient( to bottom, @topColor, @bottomColor);
+	background-image:  -o-linear-gradient(top, @topColor, @bottomColor);
+	background-image:  -ms-linear-gradient(top, @topColor, @bottomColor);
+	background-image:  -webkit-linear-gradient(top, @topColor, @bottomColor);
+	background-color: @topColor;
+}
+
+.linear-gradient-and-image(@topColor, @bottomColor, @image: url("")){
+	background-color: @topColor;
+	background-image:  linear-gradient( to bottom, @topColor, @bottomColor);
+	background-image:  -o-linear-gradient(top, @topColor, @bottomColor);
+	background-image: -ms-linear-gradient(top, @topColor, @bottomColor);
+	background-image: -webkit-linear-gradient(top, @topColor, @bottomColor);
+	background-image: @image
+	
+}
+
+.box-sizing(@option: border-box){
+	-moz-box-sizing: @option;
+	box-sizing: @option;
+}
+
+.transition(@duration, @delay, @property){
+	transition: @property @duration @delay;
+	-webkit-transition: @property @duration @delay;
+}
+
+.animation(@arguments){
+	animation: @arguments; 
+-webkit-animation: @arguments; /* Safari and Chrome */
+}
+

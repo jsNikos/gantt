@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/require.js"></script>
+<script>
+	// config of require.js
+	requirejs.config({
+		baseUrl : 'js',
+		paths : {'jquery.event.drag-2.2' : 'libs/jquery.event.drag-2.2',
+			'underscore' : 'libs/underscore'}
+	});
+</script>
+</head>
+<body>
+	<div class="container gantt"></div>
+
+</body>
+<script type="text/javascript" src="js/libs/jquery-1.9.1.js"></script>
+<!-- <script type="text/javascript" src="js/underscore.js"></script> -->
+
+
+<script type="text/javascript">
+	jQuery(function() {
+		require(['jQuery.decor.gantt'], function() {
+			var rows = [ {
+				id : 1,
+				label : 'one'
+			}, {
+				id : 2,
+				label : 'two'
+			}, {
+				id : 3,
+				label : 'three'
+			}, {
+				id : 4,
+				label : 'four'
+			},  {
+				id : 5,
+				label : 'five'
+			}, {
+				id : 6,
+				label : 'six'
+			}, {
+				id : 7,
+				label : 'seven'
+			}, {
+				id : 8,
+				label : 'eight'
+			} ];
+			var columns = JSON.parse(JSON.stringify(rows));
+			var line1 = {id: 1, row: rows[1], columns: columns.slice(1, 5)};
+			
+			jQuery('.container.gantt').ganttDecor({
+				rows : rows,
+				columns : columns,
+				lines : [line1]			
+			});			
+			
+		});
+
+	});
+ </script>
+</html>

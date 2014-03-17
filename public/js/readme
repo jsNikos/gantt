@@ -1,0 +1,1 @@
+Ensure the dependencies in 'libs'-folder are accessable for require.js.

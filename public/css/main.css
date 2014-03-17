@@ -1,0 +1,114 @@
+.gantt.container {
+  position: relative;
+  z-index: 0;
+  width: 250px;
+  height: 200px;
+}
+/* general pseudo-table styles */
+.gantt.container .tableCell {
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+.gantt.container .tableCell .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-width: 1px 1px 0px 0px;
+  border-style: solid;
+  border-color: #999999;
+}
+/* special borders */
+.gantt.container .columns .tableCell .content {
+  border-top: none;
+}
+.gantt.container .rows .tableCell:first-child .content,
+.gantt.container .cells .row:first-child .content {
+  border-top: none;
+}
+.gantt.container .cells .content {
+  border-color: #cccccc;
+}
+.gantt.container .cells .row:last-child .content {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+/* style for rows */
+.gantt.container .rows .tableCell .content {
+  white-space: nowrap;
+}
+/* style for columns */
+.gantt.container .cols-container {
+  overflow-x: hidden;
+  border-width: 0px 0px 0px 1px;
+  border-style: solid;
+  border-color: #999999;
+}
+.gantt.container .columns {
+  position: relative;
+}
+/* scroll-containers */
+.gantt.container .vscroller {
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid #999999;
+}
+.gantt.container .hscroller {
+  position: absolute;
+  overflow-x: auto;
+  z-index: 0;
+}
+.gantt.container .hscroller .fake {
+  height: 1px;
+}
+/* cell styles */
+.gantt.container .cells {
+  position: relative;
+}
+.gantt.container .cell-container {
+  overflow-x: hidden;
+  overflow-y: visible;
+  position: absolute;
+}
+.gantt.container .cell.marked .content:before {
+  content: '';
+  position: absolute;
+  height: 70%;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+  width: 100%;
+}
+.gantt.container .cell.marked.green .content:before {
+  background: #008000;
+}
+.gantt.container .cell.marked.yellow .content:before {
+  background: #ffff00;
+}
+.gantt.container .cell.marked.red .content:before {
+  background: #ff0000;
+}
+.gantt.container .cell.marked.black .content:before {
+  background: #000000;
+}
+.gantt.container .cell.marked.start .content:before {
+  right: 0px;
+  width: 70%;
+  border-radius: 50% 0 0 50%;
+  cursor: move;
+}
+.gantt.container .cell.marked.end .content:before {
+  left: 0px;
+  width: 70%;
+  border-radius: 0 50% 50% 0;
+  cursor: move;
+}
+.gantt.container .cell.marked.start.end .content:before {
+  left: 0px;
+  width: 70%;
+  border-radius: 70%;
+}
